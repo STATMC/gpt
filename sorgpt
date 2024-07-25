@@ -1,0 +1,31 @@
+def com_sentences(value, name, way):
+
+    negatif = [
+        f"{name} endeksi dün %{sp_yesterday} düşüş gösterdi.",
+        f"Dünkü işlem gününde {name} endeksi %{sp_yesterday} değer kaybetti.",
+        f"{name} endeksi, dün %{sp_yesterday} oranında azaldı."
+    ]
+
+    pozitif = [
+        f"{name} endeksi dün %{sp_yesterday} artış gösterdi.",
+        f"Dünkü işlem gününde {name} endeksi %{sp_yesterday} değer kazandı.",
+        f"{name} endeksi, dün %{sp_yesterday} oranında yükseldi."
+    ]
+
+    notr = [
+        f"{name} endeksi dün önemli bir değişiklik göstermedi.",
+        f"Dünkü işlem gününde {name} endeksi sabit kaldı.",
+        f"{name} endeksi, dün kayda değer bir hareket yapmadı."
+    ]
+    if way == 'nort':
+        random.choice(notr)
+
+
+
+for endeks in list(change_list.keys()):
+    value = (change_list[endeks][0])
+    name = (change_list[endeks][1])
+    if abs(value) < 0.05:
+        way = 'notr'
+        cumle = com_sentences()
+        print(random.choice(notr, replace = False))
